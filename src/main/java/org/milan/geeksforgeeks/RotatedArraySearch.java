@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Search a key in a rotated array
  * <p>
- * Time Complextiy - O(logn)
- *
+ * Time Complexity - O(logn)
+ * <p>
  * {@link @https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/}
  *
  * @author Milan Rathod

@@ -1,7 +1,5 @@
 package org.milan.datastructure.stack;
 
-import com.sun.istack.internal.NotNull;
-
 /**
  * Problem: Implement two stacks with one array
  * Refer {@link @https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/}
@@ -24,7 +22,7 @@ public class TwoStacksWithOneArray {
         top2 = size;
     }
 
-    public void push(@NotNull String stackType, int item) {
+    public void push(String stackType, int item) {
         if (isOverflow()) {
             System.out.println(stackType + " is full");
         } else if (stackType.equals(STACK_1)) {
@@ -34,7 +32,7 @@ public class TwoStacksWithOneArray {
         }
     }
 
-    public int pop(@NotNull String stackType) {
+    public int pop(String stackType) {
         int item;
         if (isUnderflow(stackType)) {
             System.out.println(stackType + " is empty");

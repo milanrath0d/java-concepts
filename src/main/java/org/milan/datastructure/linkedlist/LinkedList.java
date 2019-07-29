@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * LinkedList operations
+ * Linked list with all basic operations
  *
  * @author Milan Rathod
  */
@@ -172,11 +172,13 @@ public class LinkedList {
 
     }
 
-    //Reverse the linkedlist - iterative approach
+    /**
+     * Reverse a given linked list - iterative approach
+     */
     public void reverseByIterative() {
         Node current = head;
         Node prev = null;
-        Node next = null;
+        Node next;
         while (current != null) {
             next = current.next;
             current.next = prev;
@@ -187,7 +189,9 @@ public class LinkedList {
         head = prev;
     }
 
-    //Reverse the linkedlist - recursive approach
+    /**
+     * Reverse a given linked list - recursive approach
+     */
     public Node reverseByRecursive(Node curr, Node prev) {
         if (curr.next == null) {
             head = curr;
