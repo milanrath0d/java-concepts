@@ -17,8 +17,7 @@ public class WeakHashMapDemo {
         map.put(i, "test");
         map.put(120, "test2");
 
-        // Two entries should be there in map
-        assert map.size() == 2;
+        System.out.println(map.size());
 
         i = null;
 
@@ -30,8 +29,7 @@ public class WeakHashMapDemo {
             e.printStackTrace();
         }
 
-        // After System.gc() run, one entry is removed
-        assert map.size() == 2;
+        System.out.println(map.size());
     }
 
 }

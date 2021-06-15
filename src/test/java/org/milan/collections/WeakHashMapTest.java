@@ -31,7 +31,6 @@ class WeakHashMapTest {
         await().atMost(10, TimeUnit.SECONDS).until(map::isEmpty);
     }
 
-
     @Test
     void givenWeakHashMap_whenCacheValueThatHasNoReferenceToIt_GCShouldReclaimThatObjectButLeaveReferencedObject() {
         //given

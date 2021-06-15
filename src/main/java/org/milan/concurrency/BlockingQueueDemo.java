@@ -42,18 +42,17 @@ public class BlockingQueueDemo {
 
 class NumbersProducer implements Runnable {
 
-    private BlockingQueue<Integer> blockingQueue;
+    private final BlockingQueue<Integer> blockingQueue;
 
-    private int poisonPill;
+    private final int poisonPill;
 
-    private int poisonPillPerProducer;
+    private final int poisonPillPerProducer;
 
     NumbersProducer(BlockingQueue<Integer> blockingQueue, int poisonPill, int poisonPillPerProducer) {
         this.blockingQueue = blockingQueue;
         this.poisonPill = poisonPill;
         this.poisonPillPerProducer = poisonPillPerProducer;
     }
-
 
     @Override
     public void run() {
@@ -65,7 +64,7 @@ class NumbersProducer implements Runnable {
     }
 
     private void generateNumbers() throws InterruptedException {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             blockingQueue.put(ThreadLocalRandom.current().nextInt(100));
         }
 
@@ -77,9 +76,9 @@ class NumbersProducer implements Runnable {
 
 class NumbersConsumer implements Runnable {
 
-    private BlockingQueue<Integer> blockingQueue;
+    private final BlockingQueue<Integer> blockingQueue;
 
-    private int poisonPill;
+    private final int poisonPill;
 
     NumbersConsumer(BlockingQueue<Integer> blockingQueue, int poisonPill) {
         this.blockingQueue = blockingQueue;

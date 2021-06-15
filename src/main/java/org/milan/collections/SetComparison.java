@@ -1,10 +1,6 @@
 package org.milan.collections;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Comparison between HashSet, LinkedHashSet and TreeSet

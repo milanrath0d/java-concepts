@@ -8,6 +8,6 @@ import java.util.function.BiFunction;
 public class BiFunctionDemo {
 
     public int find(String str, Integer value, BiFunction<String, Integer, Integer> biFunction) {
-        return biFunction.apply(str,value);
+        return biFunction.apply(str, value);
     }
 }
