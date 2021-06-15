@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LinkedListTest {
 

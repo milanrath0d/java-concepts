@@ -3,7 +3,7 @@ package org.milan.annotation;
 /**
  * @author Milan Rathod
  */
-public class JsonSerializationException extends Exception{
+public class JsonSerializationException extends Exception {
 
     public JsonSerializationException() {
     }

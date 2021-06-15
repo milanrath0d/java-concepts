@@ -34,6 +34,5 @@ public class EqualsVsCompareTo {
 
         // TreeSet is using compareTo method to check duplicates
         System.out.println(bigDecimals.size());
-
     }
 }

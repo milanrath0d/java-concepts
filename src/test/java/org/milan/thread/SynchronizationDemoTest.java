@@ -1,15 +1,16 @@
-package org.milan;
+package org.milan.thread;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * Test class for {@link SynchronizationDemo}
@@ -24,7 +25,6 @@ class SynchronizationDemoTest {
     }
 
     @Test
-    @Disabled
     void testWithoutSynchronization() throws InterruptedException {
         SynchronizationDemo synchronizationDemo = new SynchronizationDemo();
 
@@ -34,7 +34,7 @@ class SynchronizationDemoTest {
                 .forEach(value -> executorService.submit(synchronizationDemo::calculate));
         executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
-        assertEquals(1000, synchronizationDemo.getSum());
+        assertNotEquals(1000, synchronizationDemo.getSum());
     }
 
     @Test
@@ -83,6 +83,21 @@ class SynchronizationDemoTest {
         executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
         assertEquals(1000, SynchronizationDemo.getStaticSum());
+    }
+
+    @Test
+    void testReentrantLock() throws InterruptedException {
+        SynchronizationDemo synchronizationDemo = new SynchronizationDemo();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        Stream.of("first", "second")
+                .forEach(value -> executorService.submit(() -> {
+                    stringBuilder.append(synchronizationDemo.reentrantLock(value));
+                }));
+        executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
+
+        assertEquals("FirstSecondThirdFirstSecondThird", stringBuilder.toString());
     }
 
 }

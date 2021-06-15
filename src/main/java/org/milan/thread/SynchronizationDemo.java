@@ -1,4 +1,4 @@
-package org.milan;
+package org.milan.thread;
 
 import lombok.Data;
 
@@ -51,6 +51,23 @@ public class SynchronizationDemo {
         synchronized (SynchronizationDemo.class) {
             staticSum += 1;
         }
+    }
+
+    public String reentrantLock(String name) {
+        String test = "";
+        synchronized (this) {
+            System.out.println("First time acquired by " + name);
+            test += "First";
+            synchronized (this) {
+                System.out.println("Entering again by " + name);
+                test += "Second";
+                synchronized (this) {
+                    System.out.println("And again by " + name);
+                    test += "Third";
+                }
+            }
+        }
+        return test;
     }
 
     /**
