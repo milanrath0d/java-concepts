@@ -7,6 +7,8 @@ import java.util.concurrent.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ * Test class for testing use cases of {@link Future}
+ *
  * @author Milan Rathod
  */
 class FutureTest {
