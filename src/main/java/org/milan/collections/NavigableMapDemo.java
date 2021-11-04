@@ -39,6 +39,5 @@ public class NavigableMapDemo {
         NavigableMap<String, String> subMap = navigableMap.subMap("Java", false, "Scala", false);
 
         System.out.println("Sub Map: " + subMap);
-
     }
 }

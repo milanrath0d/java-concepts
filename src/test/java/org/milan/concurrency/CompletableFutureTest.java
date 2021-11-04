@@ -31,7 +31,7 @@ class CompletableFutureTest {
     }
 
     @Test
-    public void whenCancelingTheFuture_thenThrowsCancellationException() throws InterruptedException {
+    public void whenCancelingTheFuture_thenThrowsCancellationException() {
         Future<String> future = calculateAsyncWithCancellation();
 
         assertThrows(CancellationException.class, future::get);
@@ -88,7 +88,7 @@ class CompletableFutureTest {
     }
 
     @Test
-    public void whenUsingThenAcceptBoth_thenWaitForExecutionOfBothFutures() throws ExecutionException, InterruptedException {
+    public void whenUsingThenAcceptBoth_thenWaitForExecutionOfBothFutures() {
         CompletableFuture.supplyAsync(() -> "Hello")
                 .thenAcceptBoth(CompletableFuture.supplyAsync(() -> " World"), (s1, s2) -> System.out.println(s1 + s2));
     }
