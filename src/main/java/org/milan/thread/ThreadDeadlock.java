@@ -27,11 +27,11 @@ public class ThreadDeadlock {
         t2.start();
     }
 
-    class SyncThread implements Runnable {
+    static class SyncThread implements Runnable {
 
-        private Object obj1;
+        private final Object obj1;
 
-        private Object obj2;
+        private final Object obj2;
 
         public SyncThread(Object obj1, Object obj2) {
             this.obj1 = obj1;

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -21,7 +20,7 @@ public class CountDownLatchDemo {
 
         List<Thread> workers = Stream.generate(() -> new Thread(new Worker(outputScraper, countDownLatch)))
                 .limit(5)
-                .collect(Collectors.toList());
+                .toList();
 
         workers.forEach(Thread::start);
 
