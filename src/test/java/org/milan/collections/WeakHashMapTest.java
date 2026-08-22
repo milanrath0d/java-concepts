@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
 
-import static com.jayway.awaitility.Awaitility.await;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
