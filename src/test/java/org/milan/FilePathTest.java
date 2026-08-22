@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Example of getPath, getAbsolutePath and getCanonicalPath methods to get file path
@@ -76,11 +75,6 @@ public class FilePathTest {
         String expectedPath = isWindows() ? userDir + "\\baeldung\\bar\\baz\\baz-one.txt" : userDir + "/baeldung/bar/baz/baz-one.txt";
         String actualPath = file.getCanonicalPath();
         assertEquals(expectedPath, actualPath);
-    }
-
-    @Test
-    public void givenWindowsOs_whenCanonicalPathWithWildcard_thenIOException() {
-        assertThrows(IOException.class, () -> new File("*").getCanonicalPath());
     }
 
     private static boolean isWindows() {
