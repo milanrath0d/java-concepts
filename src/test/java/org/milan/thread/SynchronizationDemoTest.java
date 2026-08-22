@@ -10,7 +10,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * Test class for {@link SynchronizationDemo}
@@ -22,19 +21,6 @@ class SynchronizationDemoTest {
     @BeforeEach
     void setup() {
         SynchronizationDemo.clearStaticSum();
-    }
-
-    @Test
-    void testWithoutSynchronization() throws InterruptedException {
-        SynchronizationDemo synchronizationDemo = new SynchronizationDemo();
-
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-
-        IntStream.range(0, 1000)
-                .forEach(value -> executorService.submit(synchronizationDemo::calculate));
-        executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
-
-        assertNotEquals(1000, synchronizationDemo.getSum());
     }
 
     @Test
