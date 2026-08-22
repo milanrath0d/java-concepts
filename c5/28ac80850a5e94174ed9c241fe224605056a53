@@ -1,0 +1,27 @@
+src/test/java/org/milan/collections/FlatteningNestedCollectionsTest.java
+  s_77723aacfbd5bb::t_c081afa4b77b57 1-39
+src/test/java/org/milan/interfaces/FunctionalInterfaceDemoTest.java
+  s_77723aacfbd5bb::t_53348362de0f4e 1-51
+src/test/java/org/milan/function/SupplierDemoTest.java
+  s_77723aacfbd5bb::t_5fb386d405808e 1-28
+src/test/java/org/milan/function/BiFunctionDemoTest.java
+  s_77723aacfbd5bb::t_6250d698fed3a4 1-21
+src/test/java/org/milan/function/ShortToByteTest.java
+  s_77723aacfbd5bb::t_f0bd813bd82200 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "c528ac80850a5e94174ed9c241fe224605056a53",
+  "prompts": {},
+  "sessions": {
+    "s_77723aacfbd5bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d62a31bf-82d4-4710-a765-70e30e0113f4",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Milan Rathod <milan.rathod0510@gmail.com>"
+    }
+  }
+}
